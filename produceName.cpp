@@ -3,6 +3,7 @@
 #include <time.h>
 #include <stdlib.h>
  #include<string>
+ #include<iostream>
 CName::CName()
 {
     srand( ( unsigned )time( NULL ) );
@@ -18,7 +19,7 @@ CName::CName()
     }
  
     // 4876 个名, 名只有 2 个汉字
-    m_pName_OneDimensional = new char[ 4876 * 5 ];
+    m_pName_OneDimensional = new char[ 4876 * 7 ];
     m_ppName = new char*[ 4876 ];
  
     m = 0;
@@ -5178,11 +5179,15 @@ string CName::GetName()
     // GetName() 会被频繁调用, 属于性能敏感部分; 少量赋值代码比 strcpy 更有效率
     m_szName[ 0 ] = m_ppSurname[ nPos_1 ][ 0 ];
     m_szName[ 1 ] = m_ppSurname[ nPos_1 ][ 1 ];
- 
-    m_szName[ 2 ] = m_ppName[ nPos_2 ][ 0 ];
-    m_szName[ 3 ] = m_ppName[ nPos_2 ][ 1 ];
-    m_szName[ 4 ] = m_ppName[ nPos_2 ][ 2 ];
-    m_szName[ 5 ] = m_ppName[ nPos_2 ][ 3 ];
-    string s(m_szName,2);
+    m_szName[ 2 ] = m_ppSurname[ nPos_1 ][ 2 ];
+    m_szName[ 3 ] = m_ppName[ nPos_2 ][ 0 ];
+    m_szName[ 4 ] = m_ppName[ nPos_2 ][ 1 ];
+    m_szName[ 5 ] = m_ppName[ nPos_2 ][ 2 ];
+    nPos_2 = rand()%4876;  
+    m_szName[ 6 ] = m_ppName[ nPos_2 ][ 0 ];
+    m_szName[ 7 ] = m_ppName[ nPos_2 ][ 1 ];
+    m_szName[ 8 ] = m_ppName[ nPos_2 ][ 2 ];
+    string s(m_szName);
+    cout<<s.length()<<endl;
     return s;
 }
