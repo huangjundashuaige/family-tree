@@ -9,8 +9,8 @@ class TreeNode
 public:
     string data;
     TreeNode *lChild;
-    TreeNode *lChild;
-}
+    TreeNode *rChild;
+};
 
 class TreeMethod
 {
