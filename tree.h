@@ -10,8 +10,8 @@ public:
     string name;
     string sponge_name;
     TreeNode *lChild;
-    TreeNode *lChild;
-}
+    TreeNode *rChild;
+};
 
 class TreeMethod
 {
