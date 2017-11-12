@@ -2,7 +2,7 @@
 #include <string.h>
 #include <time.h>
 #include <stdlib.h>
- 
+ #include<string>
 CName::CName()
 {
     srand( ( unsigned )time( NULL ) );
@@ -5165,7 +5165,7 @@ void CName::InitName()
     strcpy( m_ppName[ 4875 ], "苞络" );
 }
  
-const char* CName::GetName()
+string CName::GetName()
 {
     //srand( ( unsigned )time( NULL ) );    
  
@@ -5183,6 +5183,6 @@ const char* CName::GetName()
     m_szName[ 3 ] = m_ppName[ nPos_2 ][ 1 ];
     m_szName[ 4 ] = m_ppName[ nPos_2 ][ 2 ];
     m_szName[ 5 ] = m_ppName[ nPos_2 ][ 3 ];
- 
-    return m_szName;
+    string s(m_szName,2);
+    return s;
 }

@@ -1,6 +1,8 @@
 #ifndef __NAME_H__  
 #define __NAME_H__  
-   
+
+#include<string>
+using namespace std;
 class CName  
 {  
 public:  
@@ -8,8 +10,8 @@ public:
    
     virtual ~CName();  
    
-    const char* GetName();  
-protected:  
+    string GetName();  
+    char m_szName[ 7 ];
    
     void InitSurname();  
    
@@ -22,7 +24,7 @@ protected:
     char** m_ppName;        // 名  
    
     // 3 个中文占 6 个字符  
-    char m_szName[ 7 ];  
+      
 };  
    
    
