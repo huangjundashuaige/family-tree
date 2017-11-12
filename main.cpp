@@ -1,8 +1,8 @@
 #include"produceName.h"
-#include<iostream>
-#include<stdio.h>
-#include<string.h>
-#include"name.h"
+#include <iostream>
+#include <stdio.h>
+#include <string.h>
+#include "name.h"
 using namespace std;
 int main()
 {
