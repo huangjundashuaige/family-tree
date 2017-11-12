@@ -1,6 +1,3 @@
 #include"tree.h"
 
- void TreeMethod::build(vector<int> v)
- {
-     
- }
+你看看我的

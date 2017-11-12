@@ -1,9 +1,11 @@
+
 #include"produceName.h"
-#include<iostream>
-#include<stdio.h>
-#include<string.h>
-#include<cstdlib>
+#include <iostream>
+#include <stdio.h>
+#include <string.h>
+#include "name.h"
 using namespace std;
+
 int main()
 {
     CName name;
