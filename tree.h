@@ -4,6 +4,9 @@
 #include <string>
 #include <vector>
 using namespace std;
+bool findIdSuccess = false; 
+bool findNameSuccess = false;
+bool addChildSuccess = false;
 
 struct binaryTreeNode
 {
