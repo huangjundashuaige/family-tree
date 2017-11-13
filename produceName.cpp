@@ -5187,7 +5187,8 @@ string CName::GetName()
     m_szName[ 6 ] = m_ppName[ nPos_2 ][ 0 ];
     m_szName[ 7 ] = m_ppName[ nPos_2 ][ 1 ];
     m_szName[ 8 ] = m_ppName[ nPos_2 ][ 2 ];
+    m_szName[9]='\0';
     string s(m_szName);
-    cout<<s.length()<<endl;
+   // cout<<s.length()<<endl;
     return s;
 }

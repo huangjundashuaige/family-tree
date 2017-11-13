@@ -19,7 +19,7 @@ public:
     TreeNode *root;
     void build();
     void printTheTree();
-}tree;
+};
 
 
 #endif

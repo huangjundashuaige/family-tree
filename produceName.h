@@ -11,7 +11,7 @@ public:
     virtual ~CName();  
    
     string GetName();  
-    char m_szName[ 9 ];
+    char m_szName[ 10 ];
    
     void InitSurname();  
    
