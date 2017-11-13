@@ -1,11 +1,14 @@
-#include "produceName.h"
-#include "name.h"
 #include "tree.h"
 #include <iostream>
 #include <stdio.h>
 #include <string.h>
 #include <string>
+bool findIdSuccess = false;
+bool findNameSuccess = false;
+bool addChildSuccess = false;
 
+
+using namespace std;
 void creat_family_tree ();
 void print_family_tree() ;
 void serch_family_mumber_byId();
@@ -13,8 +16,6 @@ void serch_family_mumber_byName() ;
 void family_member_add ();
 
 
-
-using namespace std;
 binaryTree family_tree;
 
 int main()
@@ -66,9 +67,9 @@ void creat_family_tree () {
 }
 
 void print_family_tree() {
+	int i = 0;
 	cout << "tree are as follows" << endl;
-
-
+	family_tree.show_binary_tree(family_tree.root, i);
 }
 
 void serch_family_mumber_byId() {
