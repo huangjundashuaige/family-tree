@@ -52,6 +52,6 @@ if(restGeneration>0)
         std::poisson_distribution<int> distribution1(volumeForGeneration-depth);
        // cout<<distribution1(generator)<<" ";
         traverse(node->next_sibling,depth+1,distribution1(generator),restBrother-1,familyName);
-    }
-  ```
-  在具体的时候的时候因为为了要达到预期是这么多的辈数而且要在每一代都随机生成，分布是只能是泊松分布，用的是<random>这个库，具体随机的时间点是在进入左child之前随机出左child的兄弟数，在进入右孩子之前先随机出子孙还应该有多少代，这样做就可以顺利保存平均值会是预期而且没有冗余
+    }
+```
+  在具体的时候的时候因为为了要达到预期是这么多的辈数而且要在每一代都随机生成，分布是只能是泊松分布，用的是<random>这个库，具体随机的时间点是在进入左child之前随机出左child的兄弟数，在进入右孩子之前先随机出子孙还应该有多少代，这样做就可以顺利保存平均值会是预期而且没有冗余,也就是说每个二叉树（或者以二叉树中节点为root的子集的二叉树）的最左边的分支的后代辈数一定不是一开始就固定的，而是要等有了根节点或sibling才能确定下来，这样才能保证每一个最左的节点的后代数提前确定，而兄弟的个数是第一个孩子产生的时候确定的保证了进入到sibling的次数可以保证不会有冲突。
