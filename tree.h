@@ -12,7 +12,7 @@ public:
 	string person_name;  //本人姓名
 	string person_sex;  //本人的性别
 	string partner_name;  //伴侣的名字
-	string partner_sex;  //本人的性别
+	string partner_sex;  //伴侣的性别
 	binaryTreeNode *first_child,*next_sibling,*front_parent,*front_sibling;  
 	//first_child和next_sibling分别是左节点和右节点，后面的front_parent和front_sibling是储存父母和哥哥姐姐信息的，只是两条线索而已
 };
