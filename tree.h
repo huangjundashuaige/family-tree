@@ -5,7 +5,7 @@
 #include <vector>
 using namespace std;
 
-struct TreeNode
+struct binaryTreeNode
 {
 public:
 	string person_num;
@@ -16,19 +16,19 @@ public:
 	binaryTreeNode *first_child,*next_sibling,*front_parent,*front_sibling;
 };
 
-class TreeMethod
+class binaryTree
 {
 public:
-   	TreeNode *root;
-	TreeMethod();
-	void creat_binary_tree(TreeNode *&root);
-	void show_binary_tree(TreeNode *&root,int i);
-	void search_all_information1(string num,TreeNode *&root);
-	void search_all_information2(string name,TreeNode *&root);
-	void search_all_height1(string num,TreeNode *&root);
-	void search_all_height2(string name,TreeNode *&root);
-	void add_child(string num,TreeNode *&root);
-	int is_rename(string name,TreeNode *&root,int i);
+   	binaryTreeNode *root;
+	binaryTree();
+	void creat_binary_tree(binaryTreeNode *&root);
+	void show_binary_tree(binaryTreeNode *&root,int i);
+	void search_all_information1(string num,binaryTreeNode *&root);
+	void search_all_information2(string name,binaryTreeNode *&root);
+	void search_all_height1(string num,binaryTreeNode *&root);
+	void search_all_height2(string name,binaryTreeNode *&root);
+	void add_child(string num,binaryTreeNode *&root);
+	int is_rename(string name,binaryTreeNode *&root,int i);
 }tree;
 
 
