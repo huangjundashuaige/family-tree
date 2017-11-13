@@ -28,7 +28,7 @@ public:
 	void search_all_information2(string name,binaryTreeNode *&root);  //按照名字搜素孩子
 	void add_child(string num,binaryTreeNode *&root);  //增加孩子，输入要增加孩子那个人的序号
 	int is_rename(string name,binaryTreeNode *&root,int i); // 检查是否重名，返回1则重名
-}tree;
+};
 
 
 #endif

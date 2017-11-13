@@ -37,7 +37,7 @@ void binaryTree::creat_binary_tree(binaryTreeNode *&root)//创建二叉树,有�
 	}
 	cout<<"是否编辑下一代(Y/N)：";  //在祖先的基础上增加子孙
 	char is_continue;
-	cin>>is_continue;
+	cin >> is_continue;
 	if(is_continue=='Y'||is_continue=='y')
 	{
 		t=new binaryTreeNode;
