@@ -20,14 +20,14 @@ void binaryTree::creat_binary_tree(binaryTreeNode *&root)//创建二叉树,有�
 		cin>>t->person_num;
 		cout<<"请输入祖先姓名：";
 		cin>>t->person_name;
-		cout<<"请输入祖先性别：";
+		cout<<"请输入祖先性别：(male or female)";
 		cin>>t->person_sex;
 		cout<<"输入其配偶姓名：";
 		cin>>t->partner_name;
-		if(t->person_sex=="nan")
-		    t->partner_sex="nv";
+		if(t->person_sex=="male")
+		    t->partner_sex="female";
 		else
-			t->partner_sex="nan";
+			t->partner_sex="male";
 		root=t;
 		root->next_sibling=NULL;
 		root->first_child=NULL;
@@ -54,10 +54,10 @@ void binaryTree::creat_binary_tree(binaryTreeNode *&root)//创建二叉树,有�
 		cin>>t->person_sex;
 		cout<<"输入"<<t->person_name<<"配偶姓名:";
 		cin>>t->partner_name;
-		if(t->partner_sex=="nan")
-			t->partner_sex="nv";
+		if(t->partner_sex=="male")
+			t->partner_sex="female";
 		else
-			t->partner_sex="nan";
+			t->partner_sex="male";
 		p->first_child=t;
 		t->front_parent=p;
 		t->front_sibling=NULL;
@@ -93,10 +93,10 @@ void binaryTree::creat_binary_tree(binaryTreeNode *&root)//创建二叉树,有�
 				cin>>t->person_sex;
 				cout<<"输入"<<t->person_name<<"配偶姓名:";
 				cin>>t->partner_name;
-				if(t->partner_sex=="nan")
-					t->partner_sex="nv";
+				if(t->partner_sex=="male")
+					t->partner_sex="female";
 				else
-					t->partner_sex="nan";
+					t->partner_sex="male";
 				p->first_child=t;
 				t->front_parent=p;
 				t->front_sibling=NULL;
@@ -121,13 +121,12 @@ void binaryTree::creat_binary_tree(binaryTreeNode *&root)//创建二叉树,有�
 				cin>>t->person_sex;
 				cout<<"输入"<<t->person_name<<"配偶姓名:";
 				cin>>t->partner_name;
-				if(t->partner_sex=="nan")
-					t->partner_sex="nv";
+				if(t->partner_sex=="male")
+					t->partner_sex="female";
 				else
-					t->partner_sex="nan";
+					t->partner_sex="male";
 				p->next_sibling=t;
 				t->front_sibling=p;
-		//		t->front_parent=NULL;
 				p=t;
 				p->next_sibling=NULL;
 				p->first_child=NULL;
