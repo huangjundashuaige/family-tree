@@ -27,8 +27,10 @@ public:
 	void show_binary_tree(binaryTreeNode *&root,int i);
 	void search_all_information1(string num,binaryTreeNode *&root);
 	void search_all_information2(string name,binaryTreeNode *&root);
-	void add_child(string num,binaryTreeNode *&root);
+	void add_child(string name,binaryTreeNode *&root);
 	int is_rename(string name,binaryTreeNode *&root,int i);
+	bool is_name(string name, binaryTreeNode *&root);
+	bool is_num(string name, binaryTreeNode *&root);
 
 };
 

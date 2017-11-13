@@ -3,10 +3,6 @@
 #include <stdio.h>
 #include <string.h>
 #include <string>
-bool findIdSuccess = true;
-bool findNameSuccess = true;
-bool addChildSuccess = true;
-
 
 using namespace std;
 void creat_family_tree ();
@@ -80,9 +76,11 @@ void serch_family_mumber_byId() {
 	cin >> id;
 	cout << "查找结果如下" << endl;
 	cout << "======================================================" << endl;
-	family_tree.search_all_information1(id, family_tree.root);
-	if (!findIdSuccess) {
-		cout << "没有编号为"<< id << "的家谱成员" << endl;
+	if (!family_tree.is_num(id, family_tree.root)) {
+		cout << "没有编号为" << id << "的家谱成员" << endl;
+	}
+	else {
+		family_tree.search_all_information1(id, family_tree.root);
 	}
 	cout << "======================================================" << endl;
 }
@@ -92,20 +90,25 @@ void serch_family_mumber_byName() {
 	cout << "使用名字寻找家谱成员，请输入名字" << endl;
 	cin >> name;
 	cout << "查找结果如下" << endl;
-	cout << "======================================================" << endl;
-	family_tree.search_all_information2(name, family_tree.root);
-	if (!findNameSuccess) {
+	
+	
+	if (!family_tree.is_num(name, family_tree.root)) {
 		cout << "没有名字为" << name << "的家谱成员" << endl;
 	}
-	cout << "======================================================" << endl;
+	else {
+		family_tree.search_all_information2(name, family_tree.root);
+	}
+
 }
 
 void family_member_add () {
 	string name;
 	cout << "用名字来添加家谱新成员,请输入新成员的父亲或母亲名字（输入的名字是在家谱中的）" << endl;
 	cin >> name;
-	family_tree.add_child(name, family_tree.root);
-	if (!addChildSuccess) {
+	if (!family_tree.is_num(name, family_tree.root)) {
 		cout << "没有名字为" << name << "的家谱成员, 添加失败" << endl;
+	}
+	else {
+		family_tree.add_child(name, family_tree.root);
 	}
 }
