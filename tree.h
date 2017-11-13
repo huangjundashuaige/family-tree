@@ -4,13 +4,16 @@
 #include <string>
 #include <vector>
 using namespace std;
-class TreeNode
+
+struct TreeNode
 {
 public:
-    string name;
-    string sponge_name;
-    TreeNode *lChild;
-    TreeNode *rChild;
+	string person_num;
+	string person_name;
+	string person_sex;
+	string partner_name;
+	string partner_sex;
+	binaryTreeNode *first_child,*next_sibling,*front_parent,*front_sibling;
 };
 
 class TreeMethod
