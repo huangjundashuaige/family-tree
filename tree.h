@@ -31,6 +31,7 @@ public:
 	int is_rename(string name,binaryTreeNode *&root,int i);
 	bool is_name(string name, binaryTreeNode *&root);
 	bool is_num(string name, binaryTreeNode *&root);
+	void creat_binary_tree_auto(binaryTreeNode *&root);
 
 };
 

@@ -1,4 +1,6 @@
 #include "tree.h"
+#include "name.h"
+#include "produceName.h"
 #include <iostream>
 #include <stdio.h>
 #include <string.h>
