@@ -27,7 +27,8 @@ public:
 	void search_all_information2(string name,binaryTreeNode *&root);
 	void search_all_height1(string num,binaryTreeNode *&root);
 	void search_all_height2(string name,binaryTreeNode *&root);
-	void add_child(string num,binaryTreeNode *&root);
+	void add_child(string num,binaryTreeNode *&root);  
+	int is_rename(string name,binaryTreeNode *&root,int i); // check whether there are new member renamed
 }tree;
 
 
