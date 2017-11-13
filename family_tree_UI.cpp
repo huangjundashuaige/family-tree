@@ -25,16 +25,18 @@ int main()
 
 	while (true) {
 
-		cout << "" 
-			<< "op"  << "\n"
-			<< " ||           1. add operation			 " << "\n"
-			<< " ||           2. decrease operation        " << "\n"
-			<< " ||           3. multiply operation        " << "\n"
-			<< " ||           4. count polynomial operation" << "\n"
-			<< " ||           5. derivation                " << "\n"
-			<< " ||           0. exit                      " << endl;
+		cout<< "  欢迎来到家谱管理系统，按照下列提示，输入操作数字操作"  << "\n\n"
+			<< "  ========================================================" << "\n"
+			<< " ||           1. 建立家谱				||"				    << "\n"
+			<< " ||           2. 打印家谱图                             ||" << "\n"
+			<< " ||           3. 查找家谱成员（通过编号）               ||" << "\n"
+			<< " ||           4. 查找家谱成员（通过名字）               ||" << "\n"
+			<< " ||           5. 增加家谱成员（新生儿）                 ||" << "\n"
+			<< " ||           0. 退出程序                               ||" << "\n"
+			<< "  ========================================================" << endl;
 
-		cout <<"please input operate_num" << endl;
+
+		cout <<"请输入操作数字" << endl;
 		cin >> operate;
 		if (operate == "1") {
 			creat_family_tree();
@@ -54,7 +56,7 @@ int main()
 		else if (operate == "0") {
 			break;
 		} else {
-			cout << "    please input right num!" << endl;	
+			cout << " 请输入正确数字！！" << endl;	
 		}
 	}
 	return 0;
@@ -68,45 +70,42 @@ void creat_family_tree () {
 
 void print_family_tree() {
 	int i = 0;
-	cout << "tree are as follows" << endl;
+	cout << "家谱图如下：" << endl;
 	family_tree.show_binary_tree(family_tree.root, i);
 }
 
 void serch_family_mumber_byId() {
 	string id;
-	cout << "use num to find member"
-		 << "please input num" << endl;
+	cout << "使用编号寻找家谱成员，请输入编号" << endl;
 	cin >> id;
-	cout << "find answer is" << endl;
+	cout << "查找结果如下" << endl;
 	cout << "======================================================" << endl;
 	family_tree.search_all_information1(id, family_tree.root);
 	if (!findIdSuccess) {
-		cout << "not exist" << endl;
+		cout << "没有编号为"<< id << "的家谱成员" << endl;
 	}
 	cout << "======================================================" << endl;
 }
 
 void serch_family_mumber_byName() {
 	string name;
-	cout << "use name to find member"
-		 << "please input name" << endl;
+	cout << "使用名字寻找家谱成员，请输入名字" << endl;
 	cin >> name;
-	cout << "find answer is" << endl;
+	cout << "查找结果如下" << endl;
 	cout << "======================================================" << endl;
 	family_tree.search_all_information2(name, family_tree.root);
 	if (!findNameSuccess) {
-		cout << "not exist" << endl;
+		cout << "没有名字为" << name << "的家谱成员" << endl;
 	}
 	cout << "======================================================" << endl;
 }
 
 void family_member_add () {
 	string name;
-	cout << "use name to add child"
-		 << "please input name" << endl;
+	cout << "用名字来添加家谱新成员,请输入新成员的父亲或母亲名字（输入的名字是在家谱中的）" << endl;
 	cin >> name;
 	family_tree.add_child(name, family_tree.root);
 	if (!addChildSuccess) {
-		cout << "no such name" << endl;
+		cout << "没有名字为" << name << "的家谱成员, 添加失败" << endl;
 	}
 }
