@@ -6,7 +6,7 @@
  #include<iostream>
 CName::CName()
 {
-    srand( ( unsigned )time( NULL ) );
+    //srand( ( unsigned )time( NULL ) );
     // 225 个单姓
     m_pSurname_OneDimensional = new char[ 225 * 3 ];
     m_ppSurname = new char*[ 255 ];

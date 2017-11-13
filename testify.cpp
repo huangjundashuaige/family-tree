@@ -7,12 +7,19 @@
 using namespace std;
 
 std::default_random_engine generator;
-int volume;
+int volumeForGeneration,volumeForBrother;
+string familyName;
 int main()
 {
-    cout<<"what's the number of generation"
-    srand(static_cast<unsigned>(time(NULL)));
-    TreeMethod tree;
-    tree.build();
+    //for(int i=0;i<10;i++)cout<<rand()%10<<endl;
+    srand( ( unsigned )time( NULL ) );
+    cout<<"what's the number of generation you expect for"<<endl;
+    cin>>volumeForGeneration;
+    cout<<"what's the number of brothers you expect for"<<endl;
+    cin>>volumeForBrother;
+    cout<<"key in the family name"<<endl;
+    cin>>familyName;
+    binaryTree tree;
+    tree.creat_binary_tree(tree.root);
     return 0;
 }
