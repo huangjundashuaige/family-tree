@@ -372,3 +372,5 @@ void binaryTree::add_child(string num,binaryTreeNode *&root) //增加孩子,必�
 		add_child(num,root->next_sibling);
 	}
 }
+//
+//
