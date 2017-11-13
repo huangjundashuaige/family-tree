@@ -1,62 +1,55 @@
-
-#include "produceName.h"
-#include "name.h"
+#include "tree.h"
 #include <iostream>
 #include <stdio.h>
 #include <string.h>
 #include <string>
+bool findIdSuccess = true;
+bool findNameSuccess = true;
+bool addChildSuccess = true;
 
-using namespace std;;;;;
+
+using namespace std;
+void creat_family_tree ();
+void print_family_tree() ;
+void serch_family_mumber_byId();
+void serch_family_mumber_byName() ;
+void family_member_add ();
+
+
+binaryTree family_tree;
 
 int main()
 {
 	string operate;
-	binaryTree family_tree;
+
 
 	while (true) {
 
-		cout << "娆㈣繋鏉ュ埌瀹惰氨绠＄悊绯荤粺" << endl;
-			<< "op" << endl;
+		cout << "" 
+			<< "op"  << "\n"
 			<< " ||           1. add operation			 " << "\n"
 			<< " ||           2. decrease operation        " << "\n"
 			<< " ||           3. multiply operation        " << "\n"
 			<< " ||           4. count polynomial operation" << "\n"
 			<< " ||           5. derivation                " << "\n"
-			<< " ||           6. calculus                " << "\n"
-			<< " ||           7. is equal                  " << "\n"
-			<< " ||           8. show_poly_list            " << "\n"
-			<< " ||           9. input_poly                " << "\n"
 			<< " ||           0. exit                      " << endl;
 
 		cout <<"please input operate_num" << endl;
 		cin >> operate;
 		if (operate == "1") {
-			creat_binary_tree();         //杩涜锛屽椤瑰紡鍔犳硶鎿嶄綔
+			creat_family_tree();
 		}
 		else if (operate == "2") {
-			show_binary_tree();  //杩涜澶氶」寮忓噺娉曟搷浣?
+			print_family_tree();  
 		}
-		else if (operate == "3") {
-			search_all_information1();     //杩涜澶氶」寮忕浉涔樻搷浣滐紝
+		else if (operate == "3") { 
+			serch_family_mumber_byId();
 		}
 		else if (operate == "4") {
-			count_polynomial();      //杩涜澶氶」寮忔眰鍊兼搷浣?
+			serch_family_mumber_byName();
 		}
 		else if (operate == "5") {
-			derivation();           //瀵瑰椤瑰紡杩涜姹傚
-		}
-		else if (operate == "6") {
-			calculus();           //瀵瑰椤瑰紡杩涜姹傚
-		}
-		else if (operate == "7") {
-			is_equal();            //鍒ゆ柇涓や釜澶氶」寮忔槸鍚︾浉绛?
-		}
-		else if (operate == "8") {
-			show_poly_list();         //灞曠ず鐩墠澶氶」寮忓垪琛?
-		}
-		else if (operate == "9") {
-
-			input_poly();              //鍐嶆杩涜澶氶」寮忕殑杈撳叆锛?
+			family_member_add();  
 		}
 		else if (operate == "0") {
 			break;
@@ -70,21 +63,50 @@ int main()
 }
 
 void creat_family_tree () {
-
+	family_tree.creat_binary_tree(family_tree.root);
 }
 
 void print_family_tree() {
-
+	int i = 0;
+	cout << "tree are as follows" << endl;
+	family_tree.show_binary_tree(family_tree.root, i);
 }
 
 void serch_family_mumber_byId() {
-
+	string id;
+	cout << "use num to find member"
+		 << "please input num" << endl;
+	cin >> id;
+	cout << "find answer is" << endl;
+	cout << "======================================================" << endl;
+	family_tree.search_all_information1(id, family_tree.root);
+	if (!findIdSuccess) {
+		cout << "not exist" << endl;
+	}
+	cout << "======================================================" << endl;
 }
 
 void serch_family_mumber_byName() {
-
+	string name;
+	cout << "use name to find member"
+		 << "please input name" << endl;
+	cin >> name;
+	cout << "find answer is" << endl;
+	cout << "======================================================" << endl;
+	family_tree.search_all_information2(name, family_tree.root);
+	if (!findNameSuccess) {
+		cout << "not exist" << endl;
+	}
+	cout << "======================================================" << endl;
 }
 
 void family_member_add () {
-	
+	string name;
+	cout << "use name to add child"
+		 << "please input name" << endl;
+	cin >> name;
+	family_tree.add_child(name, family_tree.root);
+	if (!addChildSuccess) {
+		cout << "no such name" << endl;
+	}
 }

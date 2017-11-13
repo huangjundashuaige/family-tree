@@ -1,7 +1,3 @@
-
-main
-main
-tree.cpp
-*.cpp
-tree.cpp
-tree.cpp
+*.exe
+family_tree_UI.cpp
+*.o
