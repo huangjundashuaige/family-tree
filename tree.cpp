@@ -324,3 +324,51 @@ void binaryTree::search_all_information2(string name,binaryTreeNode *&root)//使
 		search_all_information2(name,root->next_sibling);
 	}
 }
+
+void binaryTree::add_child(string num,binaryTreeNode *&root) //增加孩子,必须输入其父或母的编号增加孩子
+{
+	if(root)
+	{
+		if(root->person_num==num)
+		{
+			binaryTreeNode *cur,*child;
+			child=new binaryTreeNode;
+			cur=root;
+			if(cur->first_child==NULL)//如果该人没有孩子，则直接创建其子女
+			{	
+				cur->first_child=child;
+				child->next_sibling=NULL;
+				child->front_parent=root;
+				child->front_sibling=NULL;
+				child->first_child=NULL;
+				cout<<"输入孩子编号：";
+				cin>>child->person_num;
+				cout<<"输入孩子姓名：";
+				cin>>child->person_name;
+				cout<<"输入孩子性别：";
+				cin>>child->person_sex;
+		        cout<<root->partner_name<<"的孩子添加完毕"<<endl;
+			}
+			else//否则，直到cur->next_sibing=NULL时（即在最后一个孩子的后面增加孩子）
+			{
+				cur=cur->first_child;
+				while(cur->next_sibling)
+					cur=cur->next_sibling;
+				cur->next_sibling=child;
+				child->first_child=NULL;
+				child->next_sibling=NULL;
+				child->front_sibling=cur;
+				cout<<"输入孩子编号：";
+				cin>>child->person_num;
+				cout<<"输入孩子姓名：";
+				cin>>child->person_name;
+				cout<<"输入孩子性别：";
+				cin>>child->person_sex;
+				cout<<root->partner_name<<"的孩子添加完毕"<<endl;
+			}
+			return;
+		}
+		add_child(num,root->first_child);
+		add_child(num,root->next_sibling);
+	}
+}
