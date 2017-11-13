@@ -19,7 +19,7 @@ public:
 class TreeMethod
 {
 public:
-    TreeNode *root;
+   	TreeNode *root;
 	TreeMethod();
 	void creat_binary_tree(TreeNode *&root);
 	void show_binary_tree(TreeNode *&root,int i);
