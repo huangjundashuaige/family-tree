@@ -159,16 +159,20 @@ void binaryTree::show_binary_tree(binaryTreeNode *&root,int i) //显示二叉树
         cout<<root->person_name<<endl;
 		file<<root->person_name<<endl;
 		show_binary_tree( root->first_child, i+1 );
-		show_binary_tree( root->next_sibling, i );
+		show_binary_tree(root->next_sibling, i);
 	}
 }
 
+
 void binaryTree::search_all_information1(string num,binaryTreeNode *&root)//使用编号搜索，并显示详细信息
 {
+
 	if(root)
 	{
 		if(root->person_num==num)
-		{
+		{	
+			findIdSuccess = true;
+
 			binaryTreeNode *cur;
 			cur=root;
 			cout<<"-------------------------------------"<<endl;  //个人信息
@@ -244,12 +248,16 @@ void binaryTree::search_all_information1(string num,binaryTreeNode *&root)//使�
 	}
 }
 
+
+
+
 void binaryTree::search_all_information2(string name,binaryTreeNode *&root)//使用姓名搜索，类似上个函数
 {
 	if(root)
 	{
 		if(root->person_name==name)
 		{
+			findNameSuccess = true;
 			binaryTreeNode *cur;
 			cur=root;
 			cout<<"-------------------------------------"<<endl;
@@ -331,6 +339,7 @@ void binaryTree::add_child(string num,binaryTreeNode *&root) //增加孩子,必�
 	{
 		if(root->person_num==num)
 		{
+			addChildSuccess = true;
 			binaryTreeNode *cur,*child;
 			child=new binaryTreeNode;
 			cur=root;
