@@ -3,9 +3,9 @@
 #include <stdio.h>
 #include <string.h>
 #include <string>
-bool findIdSuccess = false;
-bool findNameSuccess = false;
-bool addChildSuccess = false;
+bool findIdSuccess = true;
+bool findNameSuccess = true;
+bool addChildSuccess = true;
 
 
 using namespace std;
