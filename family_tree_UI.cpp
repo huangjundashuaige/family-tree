@@ -9,7 +9,7 @@
 
 using namespace std;
 binaryTree family_tree;
-void creat_family_tree();
+
 int main()
 {
 	string operate;
