@@ -1,4 +1,3 @@
-
 #include "produceName.h"
 #include "name.h"
 #include "tree.h"
@@ -6,6 +5,14 @@
 #include <stdio.h>
 #include <string.h>
 #include <string>
+
+void creat_family_tree ();
+void print_family_tree() ;
+void serch_family_mumber_byId();
+void serch_family_mumber_byName() ;
+void family_member_add ();
+
+
 
 using namespace std;
 binaryTree family_tree;
