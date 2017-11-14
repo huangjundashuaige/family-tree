@@ -2,9 +2,15 @@
 #define TREE_HEADFILE
 
 #include<string>
+#include "name.h"
+#include "produceName.h"
 #include <iostream>
+#include<random>
 using namespace std;
-
+extern int volumeForGeneration;
+extern int volumeForBrother;
+extern std::default_random_engine generator;
+extern string familyName;
 
 struct binaryTreeNode
 {
@@ -34,6 +40,7 @@ public:
 	void creat_binary_tree_auto(binaryTreeNode *&root);
 
 };
+
 
 
 #endif
