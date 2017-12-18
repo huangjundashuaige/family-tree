@@ -21,6 +21,12 @@ public:
 	string partner_name;
 	string partner_sex;
 	binaryTreeNode *first_child,*next_sibling,*front_parent,*front_sibling;
+	binaryTreeNode() {
+		first_child = NULL;
+		next_sibling = NULL;
+		front_parent = NULL;
+		front_sibling = NULL;
+	}
 };
 
 class binaryTree
