@@ -19,13 +19,13 @@ var point = new BMap.Point(113.399137,23.074449);
 * 在创建地图实例后，我们需要对其进行初始化，BMap.Map.centerAndZoom()方法要求设置中心点坐标和地图级别。 
 * 地图必须经过初始化才可以执行其他操作。*/
 map.centerAndZoom(point, 18);
-
-
+var walking = new BMap.WalkingRoute(map, {renderOptions:{map: map, panel: "r-result"}});
+var Driving = new BMap.DrivingRoute(map, {renderOptions:{map: map, panel: "r-result"}});
 
 
 $("#findWalkWay").click(function(){
 
-	var walking = new BMap.WalkingRoute(map, {renderOptions:{map: map, panel: "r-result"}});
+	walking.clearResults();
 	walking.setLocation("中山大学(东校区)");
 	walking.disableAutoViewport();
 	var start,end;
@@ -35,6 +35,7 @@ $("#findWalkWay").click(function(){
 		||$("#start_place").val().indexOf("座")!=-1
 		||$("#start_place").val().indexOf("验")!=-1
 		||$("#start_place").val().indexOf("馆")!=-1
+		||$("#start_place").val().indexOf("场")!=-1
 		||$("#start_place").val().indexOf("门")!=-1)
 		start="中山大学东校区"+$("#start_place").val();
 	else start = $("#start_place").val();
@@ -44,6 +45,7 @@ $("#findWalkWay").click(function(){
 		||$("#end_place").val().indexOf("座")!=-1
 		||$("#end_place").val().indexOf("验")!=-1
 		||$("#end_place").val().indexOf("馆")!=-1
+		||$("#end_place").val().indexOf("场")!=-1
 		||$("#end_place").val().indexOf("门")!=-1)
 		end="中山大学东校区"+$("#end_place").val();
 	else end = $("#end_place").val();	
@@ -54,33 +56,34 @@ $("#findWalkWay").click(function(){
 
 $("#findDriveWay").click(function(){
 	
-		var Driving = new BMap.DrivingRoute(map, {renderOptions:{map: map, panel: "r-result"}});
-		Driving.setLocation("中山大学(东校区)");
-		Driving.disableAutoViewport();
-		var start,end;
-		if($("#start_place").val().indexOf("楼")!=-1
-			||$("#start_place").val().indexOf("院")!=-1
-			||$("#start_place").val().indexOf("教")!=-1
-			||$("#start_place").val().indexOf("座")!=-1
-			||$("#start_place").val().indexOf("验")!=-1
-			||$("#start_place").val().indexOf("馆")!=-1
-			||$("#start_place").val().indexOf("门")!=-1
-			)
-			start="中山大学东校区"+$("#start_place").val();
-		else start = $("#start_place").val();
-		if($("#end_place").val().indexOf("楼")!=-1
-			||$("#end_place").val().indexOf("院")!=-1
-			||$("#end_place").val().indexOf("教")!=-1
-			||$("#end_place").val().indexOf("座")!=-1
-			||$("#end_place").val().indexOf("验")!=-1
-			||$("#end_place").val().indexOf("馆")!=-1
-			||$("#end_place").val().indexOf("门")!=-1)
-			end="中山大学东校区"+$("#end_place").val();
-		else end = $("#end_place").val();	
-		console.log(start);
-		console.log(end);
-		Driving.search(start, end);
-	});
+	Driving.setLocation("中山大学(东校区)");
+	Driving.disableAutoViewport();
+	var start,end;
+	if($("#start_place").val().indexOf("楼")!=-1
+		||$("#start_place").val().indexOf("院")!=-1
+		||$("#start_place").val().indexOf("教")!=-1
+		||$("#start_place").val().indexOf("座")!=-1
+		||$("#start_place").val().indexOf("验")!=-1
+		||$("#start_place").val().indexOf("馆")!=-1
+		||$("#start_place").val().indexOf("场")!=-1
+		||$("#start_place").val().indexOf("门")!=-1
+		)
+		start="中山大学东校区"+$("#start_place").val();
+	else start = $("#start_place").val();
+	if($("#end_place").val().indexOf("楼")!=-1
+		||$("#end_place").val().indexOf("院")!=-1
+		||$("#end_place").val().indexOf("教")!=-1
+		||$("#end_place").val().indexOf("座")!=-1
+		||$("#end_place").val().indexOf("验")!=-1
+		||$("#end_place").val().indexOf("馆")!=-1
+		||$("#end_place").val().indexOf("场")!=-1
+		||$("#end_place").val().indexOf("门")!=-1)
+		end="中山大学东校区"+$("#end_place").val();
+	else end = $("#end_place").val();	
+	console.log(start);
+	console.log(end);
+	Driving.search(start, end);
+});
 
 
 /*
