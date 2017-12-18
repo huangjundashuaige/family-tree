@@ -3,8 +3,9 @@
 <head>  
 <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />  
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />  
-<title>path_findder_demo</title>
+<title>数据结构project</title>
 <link rel="stylesheet" type="text/css" href="./style.css">
+<link rel = "Shortcut Icon" href=./map.png> 
 <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=in4Q5jpDXh85wAdnhHVOjE9219s79BAX"></script>
 <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.0.js"></script>
 <script src="./index.js"></script>
@@ -15,19 +16,26 @@
 <div>
     <div id="left_column">  
         <div id="page_name">
-            <span>sysu_path_findder</span>
+            <span>中山大学东校区导游系统</span>
         </div>
         <div id="container"></div>
      </div>
      <div id="right_column">
+            
             <div id="input">
                     起点:<input type="text" id="start_place" />
                     <br>
                     终点:<input type="text" id="end_place" />
-                   
+                    <br>
+                    <br>
+                    <button id = "findWalkWay" >步行去</button>
+                    <br>
+                    <span>因为专门针对东校区
+                        <br>
+                        可以直接输入列如“图书馆”这样的描述</span>
             </div>
-            <button id = "findWalkWay" >步行去</button>
             <div id="r-result"></div>
+            
      </div>
 </div>
 </body>  

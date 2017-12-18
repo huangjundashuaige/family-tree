@@ -28,8 +28,18 @@ $("#findWalkWay").click(function(){
 	var walking = new BMap.WalkingRoute(map, {renderOptions:{map: map, panel: "r-result"}});
 	walking.setLocation("中山大学(东校区)");
 	walking.disableAutoViewport();
+
 	var start = "中山大学东校区"+ $("#start_place").val();
 	var end = "中山大学东校区"+ $("#end_place").val();
+
+	// var start,end;
+	// if($("#start_place").val().indexOf("楼")!=-1||$("#start_place").val().indexOf("院")!=-1||$("#start_place").val().indexOf("教")!=-1||$("#start_place").val().indexOf("座")!=-1||$("#start_place").val().indexOf("验")!=-1||$("#start_place").val().indexOf("馆")!=-1)
+	// 	start="中山大学东校区"+$("#start_place").val();
+	// else start = $("#start_place").val();
+	// if($("#end_place").val().indexOf("楼")!=-1||$("#end_place").val().indexOf("院")!=-1||$("#end_place").val().indexOf("教")!=-1||$("#end_place").val().indexOf("座")!=-1||$("#end_place").val().indexOf("验")!=-1||$("#end_place").val().indexOf("馆")!=-1)
+	// 	end="中山大学东校区"+$("#end_place").val();
+	// else end = $("#end_place").val();	
+
 	console.log(start);
 	console.log(end);
 	walking.search(start, end);
