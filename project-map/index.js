@@ -28,8 +28,8 @@ $("#findWalkWay").click(function(){
 	var walking = new BMap.WalkingRoute(map, {renderOptions:{map: map, panel: "r-result"}});
 	walking.setLocation("中山大学(东校区)");
 	walking.disableAutoViewport();
-	var start = $("#start_place").val();
-	var end = $("#end_place").val();
+	var start = "中山大学东校区"+ $("#start_place").val();
+	var end = "中山大学东校区"+ $("#end_place").val();
 	console.log(start);
 	console.log(end);
 	walking.search(start, end);
